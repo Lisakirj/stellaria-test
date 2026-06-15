@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stellaria — Front-End Test</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background: #05070c;
+        color: #d6dceb;
+        padding: 50px 20px;
+        line-height: 1.5;
+      }
+      .container {
+        max-width: 760px;
+        margin: 0 auto;
+      }
+      h1 {
+        font-size: 32px;
+        color: #f5f7fb;
+        margin-bottom: 10px;
+      }
+      .desc {
+        color: #98a3ba;
+        margin-bottom: 30px;
+        font-size: 15px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      @media (max-width: 600px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .card {
+        display: block;
+        text-decoration: none;
+        background: #0b1426;
+        border: 1px solid #233359;
+        border-radius: 8px;
+        padding: 20px;
+        color: inherit;
+        transition: 0.2s;
+      }
+      .card:hover {
+        border-color: #6fe4f3;
+      }
+      .card h2 {
+        font-size: 18px;
+        color: #f5f7fb;
+        margin-bottom: 8px;
+      }
+      .card p {
+        font-size: 13px;
+        color: #98a3ba;
+      }
+      .footer {
+        margin-top: 40px;
+        font-size: 13px;
+        color: #98a3ba;
+      }
+      a {
+        color: #6fe4f3;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      code {
+        font-family: monospace;
+        background: #152341;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Stellaria™ — Front-End Test</h1>
+      <p class="desc">
+        Project deliverables for the front-end assessment. You can open each
+        project below or check the <a href="README.md">README.md</a> for notes.
+      </p>
+
+      <div class="grid">
+        <a class="card" href="banner/index.html">
+          <h2>01. HTML5 Banner →</h2>
+          <p>
+            Animated 300×600 web banner. Top part features the main animation
+            loop, bottom part contains the scrolling safety info.
+          </p>
+        </a>
+
+        <a class="card" href="email/index.html">
+          <h2>02. HTML Email →</h2>
+          <p>
+            Responsive 600px email template. Built with tables and inline
+            styles, fully optimized for modern clients and Outlook.
+          </p>
+        </a>
+      </div>
+
+      <p class="footer">
+        To test locally, run a static server from the root folder:
+        <code>npx serve</code>.
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=300, initial-scale=1" />
+    <title>Stellaria — 300×600 banner</title>
+
+    <style>
+      :root {
+        --obsidian-900: #05070c;
+        --obsidian-800: #0b1426;
+        --obsidian-700: #152341;
+        --obsidian-600: #233359;
+        --ice-050: #f5f7fb;
+        --ice-100: #eaeff8;
+        --ice-200: #d6dceb;
+        --ice-400: #98a3ba;
+        --plasma-500: #6fe4f3;
+        --plasma-300: #b5f1f8;
+        --plasma-glow: rgba(111, 228, 243, 0.35);
+        --signal-warn: #ffc75a;
+        --font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        --mono:
+          ui-monospace, SFMono-Regular, Menlo, Consolas, 'Courier New',
+          monospace;
+
+        --ease: cubic-bezier(0.16, 1, 0.3, 1);
+        --d-copy: 600ms;
+        --d-cap: 760ms;
+        --d-cta: 420ms;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        background: #000;
+      }
+      body {
+        font-family: var(--font);
+        -webkit-font-smoothing: antialiased;
+        color: var(--ice-200);
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 16px;
+      }
+
+      .ad {
+        position: relative;
+        width: 300px;
+        height: 600px;
+        overflow: hidden;
+        background: var(--obsidian-900);
+        border: 1px solid var(--obsidian-600);
+        text-decoration: none;
+        color: inherit;
+        isolation: isolate;
+      }
+
+      .stage {
+        position: absolute;
+        inset: 0 0 auto 0;
+        height: 300px;
+        overflow: hidden;
+        background: var(--obsidian-900);
+      }
+
+      .stage::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.9;
+        background-image:
+          radial-gradient(
+            1px 1px at 12% 18%,
+            rgba(234, 239, 248, 0.9) 50%,
+            transparent 51%
+          ),
+          radial-gradient(
+            1px 1px at 28% 64%,
+            rgba(234, 239, 248, 0.7) 50%,
+            transparent 51%
+          ),
+          radial-gradient(
+            1px 1px at 44% 30%,
+            rgba(234, 239, 248, 0.8) 50%,
+            transparent 51%
+          ),
+          radial-gradient(
+            1px 1px at 62% 78%,
+            rgba(234, 239, 248, 0.65) 50%,
+            transparent 51%
+          ),
+          radial-gradient(
+            1px 1px at 78% 22%,
+            rgba(234, 239, 248, 0.85) 50%,
+            transparent 51%
+          ),
+          radial-gradient(
+            1px 1px at 88% 58%,
+            rgba(234, 239, 248, 0.6) 50%,
+            transparent 51%
+          ),
+          radial-gradient(
+            1.4px 1.4px at 70% 44%,
+            rgba(181, 241, 248, 0.6) 50%,
+            transparent 51%
+          ),
+          radial-gradient(
+            1.4px 1.4px at 20% 86%,
+            rgba(181, 241, 248, 0.4) 50%,
+            transparent 51%
+          );
+      }
+
+      .chrome {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 6;
+        padding: 14px 16px 0;
+      }
+      .chrome .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .wordmark {
+        display: block;
+        height: 24px;
+        width: auto;
+        color: var(--ice-100);
+      }
+      .rx {
+        font-family: var(--mono);
+        font-size: 8px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--ice-200);
+        border: 1px solid var(--obsidian-600);
+        border-radius: 2px;
+        padding: 2px 6px;
+        white-space: nowrap;
+      }
+      .eyebrow {
+        margin-top: 20px;
+        margin-bottom: 9px;
+        font-family: var(--mono);
+        font-size: 9px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--plasma-500);
+      }
+
+      .frame {
+        position: absolute;
+        inset: 0;
+        will-change: transform, opacity;
+      }
+      .frame .pad {
+        position: absolute;
+        left: 18px;
+        right: 18px;
+      }
+
+      .h1 {
+        font-weight: 500;
+        color: var(--ice-050);
+        letter-spacing: -0.02em;
+        line-height: 1.12;
+      }
+      .sub {
+        font-size: 12px;
+        line-height: 1.35;
+        color: var(--ice-400);
+      }
+
+      .f1 .h1 {
+        top: 0;
+        font-size: 32px;
+        font-weight: 900;
+        letter-spacing: -0.045em;
+        line-height: 0.92;
+        text-wrap: balance;
+      }
+      .f1 .pad {
+        top: 130px;
+      }
+      .f1 .h1-line {
+        display: block;
+      }
+      .f1 {
+        opacity: 0;
+        transform: translateY(16px);
+        transition:
+          opacity var(--d-copy) var(--ease),
+          transform var(--d-copy) var(--ease);
+      }
+      .stage.is-f1 .f1 {
+        opacity: 1;
+        transform: none;
+      }
+
+      .stage.is-f2 .f1,
+      .stage.is-f3 .f1 {
+        opacity: 0;
+        transform: translateY(-118%);
+      }
+
+      .f2 {
+        opacity: 0;
+        transform: translateY(118%);
+        transition:
+          opacity var(--d-copy) var(--ease),
+          transform var(--d-copy) var(--ease);
+        z-index: 4;
+      }
+      .stage.is-f2 .f2 {
+        opacity: 1;
+        transform: none;
+      }
+
+      .stage.is-f3 .f2 {
+        opacity: 0;
+        transform: none;
+        transition: opacity var(--d-copy) var(--ease);
+      }
+      .f2 .h1 {
+        top: 90px;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.08;
+        text-wrap: balance;
+      }
+      .f2 .sub {
+        top: 230px;
+        font-size: 10.5px;
+        color: var(--ds-ice-200);
+        line-height: 1.4;
+      }
+
+      .f3 {
+        opacity: 0;
+        transform: translateX(-22px);
+        transition:
+          opacity var(--d-copy) var(--ease),
+          transform var(--d-copy) var(--ease);
+      }
+      .stage.is-f3 .f3 {
+        opacity: 1;
+        transform: none;
+      }
+      .f3 .stat {
+        position: absolute;
+        left: 18px;
+        top: 84px;
+        font-weight: 800;
+        font-size: 60px;
+        color: var(--plasma-500);
+        letter-spacing: -0.04em;
+        line-height: 0.9;
+        font-variant-numeric: tabular-nums;
+      }
+      .f3 .stat-label {
+        position: absolute;
+        left: 18px;
+        top: 140px;
+        font-family: var(--mono);
+        font-size: 9px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--ice-200);
+      }
+      .f3 .h1 {
+        top: 200px;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        line-height: 1.2;
+        right: 18px;
+        left: 18px;
+        text-wrap: balance;
+      }
+      .f3 .sub {
+        font-size: 10px;
+        line-height: 1.4;
+        color: var(--ice-200);
+        top: 220px;
+        right: 18px;
+        opacity: 0;
+        transform: translateY(6px);
+        transition:
+          opacity 460ms var(--ease) 240ms,
+          transform 460ms var(--ease) 240ms;
+      }
+
+      .stage.is-f3 .f3 .sub {
+        opacity: 1;
+        transform: none;
+      }
+
+      .cap {
+        position: absolute;
+        left: 75px;
+        top: 158px;
+        width: 140px;
+        height: 140px;
+        z-index: 3;
+        background: url(capsule.png) center/contain no-repeat;
+        opacity: 0;
+        transform: scale(0.62);
+        transform-origin: 50% 50%;
+        transition:
+          opacity var(--d-cap) var(--ease),
+          transform var(--d-cap) var(--ease);
+      }
+      .stage.is-f2 .cap {
+        opacity: 1;
+        transform: scale(1);
+      }
+      .stage.is-f3 .cap {
+        opacity: 1;
+        transform: translate(110px, -72px) scale(0.857);
+      }
+
+      .cta {
+        position: absolute;
+        right: 18px;
+        bottom: 14px;
+        z-index: 5;
+        display: inline-flex;
+        align-items: center;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        gap: 7px;
+        height: 30px;
+        padding: 0px 14px;
+        background: var(--plasma-500);
+        color: var(--obsidian-900);
+
+        text-decoration: none;
+        white-space: nowrap;
+        opacity: 0;
+        transform: translateY(10px);
+        transition:
+          opacity var(--d-cta) var(--ease) 220ms,
+          transform var(--d-cta) var(--ease) 220ms,
+          background var(--d-cta) var(--ease);
+      }
+      .cta:hover {
+        background: var(--plasma-300);
+      }
+      .cta .arr {
+        font-weight: 500;
+      }
+      .stage.is-f2 .cta,
+      .stage.is-f3 .cta {
+        opacity: 1;
+        transform: none;
+      }
+
+      .isi {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 300px;
+        height: 300px;
+        background: var(--obsidian-800);
+        border-top: 1px solid var(--plasma-500);
+        display: flex;
+        flex-direction: column;
+      }
+      .isi-head {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 14px;
+        border-bottom: 1px solid var(--obsidian-600);
+        background: var(--obsidian-800);
+      }
+      .isi-head .t {
+        font-family: var(--mono);
+        font-size: 9px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--plasma-500);
+      }
+      .isi-head .scroll {
+        font-family: var(--mono);
+        font-size: 8px;
+        letter-spacing: 0.12em;
+        color: var(--ice-400);
+      }
+      .isi-body {
+        flex: 1 1 auto;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 10px 14px 10px 12px;
+        scrollbar-width: thin;
+        scrollbar-color: var(--plasma-500) transparent;
+        margin-bottom: 20px;
+      }
+      .isi-body::-webkit-scrollbar {
+        width: 1px;
+      }
+      .isi-body::-webkit-scrollbar-thumb {
+        background: var(--obsidian-600);
+        border-radius: 1px;
+      }
+      .isi-body::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      .boxed {
+        border: 0;
+        padding: 0;
+        margin-bottom: 6px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: var(--signal-warn);
+      }
+      .boxed .wlabel {
+        display: block;
+        font-family: var(--mono);
+        font-size: 8px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--signal-warn);
+        margin-top: 4px;
+      }
+
+      .boxed .wbody {
+        font-size: 10px;
+        line-height: 1.45;
+        color: var(--ice-200);
+      }
+
+      .isi-h {
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--ice-050);
+        margin-bottom: 4px;
+      }
+      .isi-p {
+        font-size: 10px;
+        line-height: 1.45;
+        color: var(--ice-100);
+        margin-bottom: 10px;
+      }
+      .isi-foot {
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--plasma-500);
+        margin-top: 11px;
+        padding-top: 9px;
+        border-top: 1px solid var(--obsidian-600);
+      }
+
+      .isi-bar {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 6px 14px;
+        border-top: 1px solid var(--obsidian-600);
+        font-family: var(--mono);
+        font-size: 8px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ice-400);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .frame,
+        .cap,
+        .cta,
+        .f3 .sub {
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="ad"
+      role="group"
+      aria-label="Stellaria advertisement. Important Safety Information below.">
+      <div class="stage" id="stage">
+        <div class="chrome">
+          <div class="row">
+            <svg
+              class="wordmark"
+              viewBox="0 0 220 48"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Stellaria">
+              <g transform="translate(4 12)">
+                <circle cx="3" cy="20" r="2.5" fill="#6FE4F3"></circle>
+                <path
+                  d="M 5 20 Q 16 2 30 10 T 44 22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-opacity="0.85"></path>
+                <circle
+                  cx="44"
+                  cy="22"
+                  r="3.5"
+                  fill="none"
+                  stroke="#6FE4F3"
+                  stroke-width="1.25"></circle>
+                <circle cx="44" cy="22" r="1.2" fill="#6FE4F3"></circle>
+              </g>
+              <text
+                x="60"
+                y="32"
+                font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+                font-weight="500"
+                font-size="24"
+                letter-spacing="0.06em"
+                fill="currentColor">
+                STELLARIA
+              </text>
+            </svg>
+            <span class="rx">Rx Only</span>
+          </div>
+          <div class="eyebrow">Stellaria™ · Morphanidine-C 12 mg</div>
+        </div>
+
+        <div class="frame f1" aria-hidden="false">
+          <div class="pad h1">
+            <span class="h1-line">The only </span>
+            <span class="h1-line">support pill for</span>
+            <span class="h1-line">interstellar crew.</span>
+          </div>
+        </div>
+
+        <div class="frame f2" aria-hidden="true">
+          <div class="pad h1">
+            Zero post-thaw <br />hangover in clinical trials.
+          </div>
+          <div class="pad sub">
+            For licensed deep-space crew prescribed pre-mission.
+          </div>
+        </div>
+
+        <div class="frame f3" aria-hidden="true">
+          <div class="stat" id="stat">0</div>
+          <div class="stat-label">Pilots studied</div>
+          <div class="pad h1">Cleared for missions ≥ 2.4 AU.</div>
+          <div class="pad sub">
+            Studied across Mars-transit and Belt-rotation protocols.
+          </div>
+        </div>
+
+        <div class="cap" aria-hidden="true"></div>
+        <a class="cta" href="#" target="_blank" rel="noopener"> Learn More </a>
+      </div>
+
+      <div class="isi">
+        <div class="isi-head">
+          <span class="t">Important Safety Information</span>
+          <span class="scroll" aria-hidden="true">Scroll ▼</span>
+        </div>
+        <div
+          class="isi-body"
+          tabindex="0"
+          aria-label="Important Safety Information, scrollable">
+          <div class="boxed">
+            <span class="welement">◆ </span>
+            <span class="wlabel">BOXED WARNING</span>
+          </div>
+
+          <p class="isi-p">
+            Ion drive co-exposure within 6 hours of Stellaria administration has
+            been associated with prolonged QT interval and, in rare cases,
+            Torsades-class arrhythmia during cryo-induction.
+          </p>
+
+          <div class="isi-h">Indication</div>
+          <p class="isi-p">
+            Stellaria is indicated as hibernation-assist therapy in licensed
+            deep-space personnel ≥ 21 years undergoing planned cryo-induction on
+            missions of 90 days or longer.
+          </p>
+
+          <div class="isi-h">Contraindications</div>
+          <p class="isi-p">
+            Known hypersensitivity to morphanidine-C; active cryo-sensitization
+            syndrome (CSS); uncorrected Grade II telomeric instability;
+            Class-III temporal stabilizers; pregnancy confirmed or suspected at
+            time of dosing.
+          </p>
+
+          <div class="isi-h">Warnings and Precautions</div>
+          <p class="isi-p">
+            Cardiac effects: see Boxed Warning. Hypothalamic set-point drift has
+            been reported during first-exposure inductions; monitor core
+            temperature for 90 minutes post-thaw. Neuro-vestibular effects,
+            including transient orientation loss, may occur on re-animation.
+          </p>
+
+          <div class="isi-h">Adverse Reactions</div>
+          <p class="isi-p">
+            Most common adverse reactions (≥ 5%, vs. placebo) were dry mouth,
+            paresthesia during re-animation, transient temporal displacement,
+            metallic taste, and mild photosensitivity.
+          </p>
+
+          <div class="isi-h">Drug Interactions</div>
+          <p class="isi-p">
+            Avoid concurrent use with Class-III temporal stabilizers and
+            monoamine oxidase inhibitors within 14 days. Ion drive co-exposure:
+            see Boxed Warning.
+          </p>
+
+          <div class="isi-h">Use in Specific Populations</div>
+          <p class="isi-p">
+            Pregnancy: contraindicated. Pediatric use: safety and effectiveness
+            not established in patients under 21 years. Reduce dose in moderate
+            hepatic or renal impairment.
+          </p>
+
+          <p class="isi-foot">
+            Please see full Prescribing Information, including Boxed Warning, at
+            stellaria-hcp.dsp.
+          </p>
+        </div>
+        <div class="isi-bar">
+          <span>STL-PI-2095-03</span>
+          <span>Rx Only</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var stage = document.getElementById('stage');
+        var statEl = document.getElementById('stat');
+        var TARGET = 412;
+
+        var reduce =
+          window.matchMedia &&
+          window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        var f1 = document.querySelector('.f1'),
+          f2 = document.querySelector('.f2'),
+          f3 = document.querySelector('.f3');
+        function activate(frame) {
+          [f1, f2, f3].forEach(function (f) {
+            f.setAttribute('aria-hidden', f === frame ? 'false' : 'true');
+          });
+        }
+
+        function countUp(duration) {
+          var start = null;
+          function tick(ts) {
+            if (start === null) start = ts;
+            var p = Math.min((ts - start) / duration, 1);
+            var eased = 1 - Math.pow(1 - p, 3);
+            statEl.textContent = Math.round(eased * TARGET);
+            if (p < 1) requestAnimationFrame(tick);
+            else statEl.textContent = TARGET;
+          }
+          requestAnimationFrame(tick);
+        }
+
+        if (reduce) {
+          statEl.textContent = TARGET;
+          stage.classList.add('is-f3');
+          activate(f3);
+          return;
+        }
+
+        setTimeout(function () {
+          stage.classList.add('is-f1');
+          activate(f1);
+        }, 120);
+
+        setTimeout(function () {
+          stage.classList.remove('is-f1');
+          stage.classList.add('is-f2');
+          activate(f2);
+        }, 2700);
+
+        setTimeout(function () {
+          stage.classList.remove('is-f2');
+          stage.classList.add('is-f3');
+          activate(f3);
+          setTimeout(function () {
+            countUp(1500);
+          }, 260);
+        }, 6000);
+      })();
+    </script>
+  </body>
+</html>
