@@ -30,7 +30,7 @@ in your browser to access the main launcher page (`index.html`), which links to 
 
 ## Testing matrix
 
-Everything below was checked in a Chromium-based preview (resized viewports + dark-mode emulation). The other browsers and email clients are built to their documented rules but weren't opened in the actual client.
+Checked in a Chromium-based preview (resized viewports + dark-mode emulation), in Safari, and on a real iPhone. The remaining email clients are built to their documented rules but weren't opened in the actual client.
 
 ### HTML5 Banner
 
@@ -40,7 +40,7 @@ Verified. All 3 frames animate correctly, text counters work, and the ISI panel 
 
 **Safari (WebKit) & Firefox (Gecko)**
 
-Uses only standard properties (`transform`, `opacity`, `rAF`) and both scrollbar syntaxes (`-webkit-` + `scrollbar-width`). Not opened in Safari/Firefox directly, but nothing here is engine-specific.
+Checked in Safari (desktop) and on a real iPhone. Uses only standard properties (`transform`, `opacity`, `rAF`) and both scrollbar syntaxes (`-webkit-` + `scrollbar-width`). Firefox not opened directly, but nothing here is engine-specific.
 
 **Accessibility**
 
@@ -54,7 +54,7 @@ Inline styles, table layout, transparent PNGs. Built to spec; not tested in the 
 
 **Mobile (iOS Mail, Gmail App)**
 
-Single column collapses via a `max-width` media query; checked at 375px in the preview. Not opened in the real iOS Mail / Gmail apps.
+Single column collapses via a `max-width` media query. Checked at 375px in the preview and on a real iPhone (Safari). Didn't open the native iOS Mail / Gmail apps, but both render with WebKit so Safari is a close proxy.
 
 **Desktop Clients (Outlook 2016+)**
 
