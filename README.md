@@ -30,7 +30,7 @@ in your browser to access the main launcher page (`index.html`), which links to 
 
 ## Testing matrix
 
-The deliverables were verified using a live Chromium-based browser preview with dark-mode emulation. The code is structured according to standards to ensure high cross-client resilience.
+Everything below was checked in a Chromium-based preview (resized viewports + dark-mode emulation). The other browsers and email clients are built to their documented rules but weren't opened in the actual client.
 
 ### HTML5 Banner
 
@@ -40,7 +40,7 @@ Verified. All 3 frames animate correctly, text counters work, and the ISI panel 
 
 **Safari (WebKit) & Firefox (Gecko)**
 
-Verified standard layout properties (`transform`, `opacity`, `rAF`) and cross-browser scrollbar styles.
+Uses only standard properties (`transform`, `opacity`, `rAF`) and both scrollbar syntaxes (`-webkit-` + `scrollbar-width`). Not opened in Safari/Firefox directly, but nothing here is engine-specific.
 
 **Accessibility**
 
@@ -50,15 +50,15 @@ Verified `prefers-reduced-motion` compliance (instantly jumps to the final frame
 
 **Modern Webmail (Gmail Web, Outlook.com)**
 
-Verified layout stability, image transparency, and responsive scaling.
+Inline styles, table layout, transparent PNGs. Built to spec; not tested in the actual Gmail / Outlook.com inboxes.
 
 **Mobile (iOS Mail, Gmail App)**
 
-Verified single-column responsive scaling and custom preheader behavior.
+Single column collapses via a `max-width` media query; checked at 375px in the preview. Not opened in the real iOS Mail / Gmail apps.
 
 **Desktop Clients (Outlook 2016+)**
 
-Layout engineered using standard MSO ghost tables, custom VML buttons for backgrounds, and cell paddings instead of CSS margins.
+Built for it with a VML `roundrect` fallback for the CTA button, PNG images (no SVG), `bgcolor` attributes alongside CSS, a PixelsPerInch fix, and cell padding instead of CSS margins.
 
 Recommended next step: Pass through Litmus / Email on Acid before an actual production deployment.
 
