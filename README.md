@@ -1,6 +1,9 @@
 **Stellaria — FE Test**
 Assessment project containing two deliverables: a 300×600 animated HTML5 banner and a 600px responsive HTML email. Both are built using clean, hand-written HTML, CSS, and JS with no external frameworks or dependencies.
 
+**DEMO**
+https://stellaria-test.vercel.app/
+
 **How to run**
 To test the project locally, run any static file server from the root directory: npx serve
 Then open http://localhost:3000 in your browser to access the main launcher page (index.html), which links to both builds.
