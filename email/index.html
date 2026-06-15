@@ -70,28 +70,88 @@
         supported-color-schemes: dark;
       }
 
-      @media only screen and (max-width: 600px) {
+      @media only screen and (max-width: 620px) {
         .container {
           width: 100% !important;
+          max-width: 100% !important;
         }
         .px {
           padding-left: 20px !important;
           padding-right: 20px !important;
         }
+        .px-32 {
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+          padding-top: 20px !important;
+        }
+
         .hero-img {
           width: 100% !important;
           height: auto !important;
         }
+
         .h-hero {
-          font-size: 32px !important;
-          line-height: 38px !important;
+          font-size: 28px !important;
+          line-height: 34px !important;
         }
-        .stack {
+
+        .h-sub {
+          font-size: 13px !important;
+          line-height: 21px !important;
+        }
+
+        .header-logo-cell {
+          display: block !important;
+          width: 100% !important;
+          padding-bottom: 10px !important;
+        }
+        .header-rx-cell {
+          display: block !important;
+          width: 100% !important;
+          text-align: left !important;
+          padding: 0 !important;
+        }
+
+        .icon-cell {
+          display: block !important;
+          width: 100% !important;
+          padding-right: 0 !important;
+          padding-bottom: 14px !important;
+        }
+
+        .feature-text-cell {
           display: block !important;
           width: 100% !important;
         }
-        .icon-td {
-          padding-bottom: 12px !important;
+
+        .feature-h3 {
+          font-size: 17px !important;
+          line-height: 21px !important;
+        }
+
+        .ref-td {
+          padding: 20px !important;
+        }
+
+        .warn-td {
+          padding: 20px !important;
+        }
+
+        .isi-td {
+          padding: 20px 20px 24px 20px !important;
+        }
+
+        .footer-td {
+          padding: 20px !important;
+        }
+
+        .dsp-lockup {
+          width: 160px !important;
+        }
+
+        .spacer-20 {
+          height: 12px !important;
+          line-height: 12px !important;
         }
       }
     </style>
@@ -121,7 +181,7 @@
       cellspacing="0"
       style="background-color: #000000">
       <tr>
-        <td align="center" style="padding: 40px 0px 40px 0px">
+        <td align="center" style="padding: 40px 0">
           <table
             role="presentation"
             width="600"
@@ -157,7 +217,8 @@
                       <span
                         style="
                           font-size: 11px;
-                          line-height: 15px; mso-line-height-rule: exactly;
+                          line-height: 15px;
+                          mso-line-height-rule: exactly;
                           font-weight: normal;
                           color: #5b6585;
                         "
@@ -173,6 +234,7 @@
                         font-size: 10px;
                         color: #5b6585;
                         white-space: nowrap;
+                        padding-left: 12px;
                       ">
                       09:42 UTC
                     </td>
@@ -188,10 +250,12 @@
             cellpadding="0"
             cellspacing="0"
             border="0"
+            class="container"
             style="width: 600px; max-width: 600px">
             <tr>
               <td
                 height="20"
+                class="spacer-20"
                 style="
                   font-size: 0;
                   line-height: 20px;
@@ -216,7 +280,7 @@
               border: 1px solid #233359;
             ">
             <tr>
-              <td class="px" style="padding: 32px 40px 0px 40px">
+              <td class="px" style="padding: 32px 40px 0 40px">
                 <table
                   role="presentation"
                   width="100%"
@@ -224,7 +288,7 @@
                   cellspacing="0"
                   border="0">
                   <tr>
-                    <td align="left" valign="middle">
+                    <td class="header-logo-cell" align="left" valign="middle">
                       <img
                         src="wordmark.png"
                         width="170"
@@ -240,7 +304,11 @@
                           letter-spacing: 3px;
                         " />
                     </td>
-                    <td align="right" valign="middle" style="padding: 0">
+                    <td
+                      class="header-rx-cell"
+                      align="right"
+                      valign="middle"
+                      style="padding: 0">
                       <table
                         role="presentation"
                         cellpadding="0"
@@ -291,7 +359,8 @@
                     margin: 0 0 14px 0;
                     font-family: Helvetica, Arial, sans-serif;
                     font-size: 40px;
-                    line-height: 44px; mso-line-height-rule: exactly;
+                    line-height: 44px;
+                    mso-line-height-rule: exactly;
                     font-weight: bold;
                     letter-spacing: -0.5px;
                     color: #ffffff;
@@ -299,11 +368,13 @@
                   Clarity on arrival.
                 </h1>
                 <p
+                  class="h-sub"
                   style="
                     margin: 0;
                     font-family: Helvetica, Arial, sans-serif;
                     font-size: 15px;
-                    line-height: 24px; mso-line-height-rule: exactly;
+                    line-height: 24px;
+                    mso-line-height-rule: exactly;
                     color: #eaeff8;
                   ">
                   Stellaria™ (morphanidine-C) 12 mg tablets — prescription
@@ -342,8 +413,9 @@
                     margin: 0 0 30px 0;
                     font-family: Helvetica, Arial, sans-serif;
                     font-size: 16px;
-                    line-height: 26px; mso-line-height-rule: exactly;
-                    color: #D6DCEB;
+                    line-height: 26px;
+                    mso-line-height-rule: exactly;
+                    color: #d6dceb;
                   ">
                   Stellaria™ (morphanidine-C) is a prescription
                   hibernation-assist tablet indicated for cryo-induction support
@@ -352,7 +424,6 @@
                   Stellaria prior to cryosleep reported a 94% reduction in
                   post-thaw cognitive fog versus placebo at T+0:30.
                 </p>
-
                 <table
                   role="presentation"
                   cellpadding="0"
@@ -386,7 +457,7 @@
                           </center>
                         </v:roundrect>
                       <![endif]-->
-                      <!--[if !mso]><!-- -->
+                      <!--[if !mso]><!-->
                       <a
                         href="https://stellaria-hcp.dsp"
                         target="_blank"
@@ -397,7 +468,8 @@
                           font-family: Helvetica, Arial, sans-serif;
                           font-size: 14px;
                           font-weight: 700;
-                          line-height: 44px; mso-line-height-rule: exactly;
+                          line-height: 44px;
+                          mso-line-height-rule: exactly;
                           letter-spacing: 0.02em;
                           text-align: center;
                           text-decoration: none;
@@ -414,7 +486,7 @@
             </tr>
 
             <tr>
-              <td style="padding: 40px 40px 0px 40px">
+              <td class="px" style="padding: 40px 40px 0 40px">
                 <p
                   style="
                     font-family: monospace, Helvetica, Arial, sans-serif;
@@ -424,7 +496,7 @@
                     color: #d6dceb;
                     border-bottom: 1px solid #233359;
                     padding-bottom: 24px;
-                    margin-bottom: 0px;
+                    margin-bottom: 0;
                   ">
                   CLINICAL PROFILE
                 </p>
@@ -441,13 +513,13 @@
                   border="0">
                   <tr>
                     <td
-                      width="50"
+                      class="icon-cell"
+                      width="78"
                       valign="top"
-                      class="stack icon-td"
                       style="
                         padding-right: 22px;
-                        padding-bottom: 22px;
                         border-bottom: 1px solid #233359;
+                        padding-bottom: 22px;
                       ">
                       <table
                         role="presentation"
@@ -460,16 +532,7 @@
                           background-color: #0b1426;
                         ">
                         <tr>
-                          <td
-                            align="center"
-                            valign="middle"
-                            height="56"
-                            style="
-                              font-family: Helvetica, Arial, sans-serif;
-                              font-size: 12px;
-                              color: #6fe4f3;
-                              font-weight: bold;
-                            ">
+                          <td align="center" valign="middle" height="56">
                             <img
                               src="icon-homeostatic.png"
                               width="30"
@@ -486,11 +549,11 @@
                       </table>
                     </td>
                     <td
+                      class="feature-text-cell"
                       valign="top"
-                      class="stack"
                       style="
-                        padding-bottom: 22px;
                         border-bottom: 1px solid #233359;
+                        padding-bottom: 22px;
                       ">
                       <p
                         style="
@@ -503,15 +566,14 @@
                         01 / Homeostatic support
                       </p>
                       <h3
+                        class="feature-h3"
                         style="
                           margin: 0 0 8px 0;
                           font-family:
-                            'Helvetica Neue',
-                            Helvetica,
-                            Arial,
-                            sans-serif;
+                            'Helvetica Neue', Helvetica, Arial, sans-serif;
                           font-size: 20px;
-                          line-height: 23px; mso-line-height-rule: exactly;
+                          line-height: 23px;
+                          mso-line-height-rule: exactly;
                           letter-spacing: -0.01em;
                           font-weight: 700;
                           color: #f5f7fb;
@@ -523,7 +585,8 @@
                           margin: 0;
                           font-family: Helvetica, Arial, sans-serif;
                           font-size: 14px;
-                          line-height: 22px; mso-line-height-rule: exactly;
+                          line-height: 22px;
+                          mso-line-height-rule: exactly;
                           color: #d6dceb;
                         ">
                         Supports cardiovascular, metabolic, and neural
@@ -537,7 +600,7 @@
             </tr>
 
             <tr>
-              <td class="px" style="padding: 0px 40px 0px 40px">
+              <td class="px" style="padding: 0 40px">
                 <table
                   role="presentation"
                   width="100%"
@@ -546,13 +609,13 @@
                   border="0">
                   <tr>
                     <td
-                      width="50"
+                      class="icon-cell"
+                      width="78"
                       valign="top"
-                      class="stack icon-td"
                       style="
                         padding-right: 22px;
-                        padding-bottom: 22px;
                         border-bottom: 1px solid #233359;
+                        padding-bottom: 22px;
                       ">
                       <table
                         role="presentation"
@@ -565,16 +628,7 @@
                           background-color: #0b1426;
                         ">
                         <tr>
-                          <td
-                            align="center"
-                            valign="middle"
-                            height="56"
-                            style="
-                              font-family: Helvetica, Arial, sans-serif;
-                              font-size: 12px;
-                              color: #6fe4f3;
-                              font-weight: bold;
-                            ">
+                          <td align="center" valign="middle" height="56">
                             <img
                               src="icon-clarity.png"
                               width="30"
@@ -591,11 +645,11 @@
                       </table>
                     </td>
                     <td
+                      class="feature-text-cell"
                       valign="top"
-                      class="stack"
                       style="
-                        padding-bottom: 22px;
                         border-bottom: 1px solid #233359;
+                        padding-bottom: 22px;
                       ">
                       <p
                         style="
@@ -608,15 +662,14 @@
                         02 / Wake clarity
                       </p>
                       <h3
+                        class="feature-h3"
                         style="
                           margin: 0 0 8px 0;
                           font-family:
-                            'Helvetica Neue',
-                            Helvetica,
-                            Arial,
-                            sans-serif;
+                            'Helvetica Neue', Helvetica, Arial, sans-serif;
                           font-size: 20px;
-                          line-height: 23px; mso-line-height-rule: exactly;
+                          line-height: 23px;
+                          mso-line-height-rule: exactly;
                           letter-spacing: -0.01em;
                           font-weight: 700;
                           color: #f5f7fb;
@@ -628,7 +681,8 @@
                           margin: 0;
                           font-family: Helvetica, Arial, sans-serif;
                           font-size: 14px;
-                          line-height: 22px; mso-line-height-rule: exactly;
+                          line-height: 22px;
+                          mso-line-height-rule: exactly;
                           color: #d6dceb;
                         ">
                         In controlled trials, 94% of subjects achieved full
@@ -645,7 +699,7 @@
               <td
                 class="px"
                 style="
-                  padding: 22px 30px 40px 40px;
+                  padding: 22px 40px 40px 40px;
                   border-bottom: 1px solid #233359;
                 ">
                 <table
@@ -656,9 +710,9 @@
                   border="0">
                   <tr>
                     <td
-                      width="50"
+                      class="icon-cell"
+                      width="78"
                       valign="top"
-                      class="stack icon-td"
                       style="padding-right: 22px">
                       <table
                         role="presentation"
@@ -671,16 +725,7 @@
                           background-color: #0b1426;
                         ">
                         <tr>
-                          <td
-                            align="center"
-                            valign="middle"
-                            height="56"
-                            style="
-                              font-family: Helvetica, Arial, sans-serif;
-                              font-size: 12px;
-                              color: #6fe4f3;
-                              font-weight: bold;
-                            ">
+                          <td align="center" valign="middle" height="56">
                             <img
                               src="icon-fleet.png"
                               width="30"
@@ -696,7 +741,7 @@
                         </tr>
                       </table>
                     </td>
-                    <td valign="top" class="stack">
+                    <td class="feature-text-cell" valign="top">
                       <p
                         style="
                           margin: 0 0 6px 0;
@@ -708,15 +753,14 @@
                         03 / Fleet-tested
                       </p>
                       <h3
+                        class="feature-h3"
                         style="
                           margin: 0 0 8px 0;
                           font-family:
-                            'Helvetica Neue',
-                            Helvetica,
-                            Arial,
-                            sans-serif;
+                            'Helvetica Neue', Helvetica, Arial, sans-serif;
                           font-size: 20px;
-                          line-height: 23px; mso-line-height-rule: exactly;
+                          line-height: 23px;
+                          mso-line-height-rule: exactly;
                           letter-spacing: -0.01em;
                           font-weight: 700;
                           color: #f5f7fb;
@@ -728,7 +772,8 @@
                           margin: 0;
                           font-family: Helvetica, Arial, sans-serif;
                           font-size: 14px;
-                          line-height: 22px; mso-line-height-rule: exactly;
+                          line-height: 22px;
+                          mso-line-height-rule: exactly;
                           color: #d6dceb;
                         ">
                         Studied across 412 pilots on Mars-transit and
@@ -743,7 +788,7 @@
 
             <tr>
               <td
-                class="px"
+                class="ref-td"
                 bgcolor="#0b1426"
                 style="
                   padding: 28px 40px;
@@ -766,7 +811,8 @@
                     margin: 0 0 8px 0;
                     font-family: Helvetica, Arial, sans-serif;
                     font-size: 11px;
-                    line-height: 17px; mso-line-height-rule: exactly;
+                    line-height: 17px;
+                    mso-line-height-rule: exactly;
                     color: #d6dceb;
                   ">
                   1. Okafor RN, Tanaka H, et al. ORION-3: A Phase III trial of
@@ -778,7 +824,8 @@
                     margin: 0 0 8px 0;
                     font-family: Helvetica, Arial, sans-serif;
                     font-size: 11px;
-                    line-height: 17px; mso-line-height-rule: exactly;
+                    line-height: 17px;
+                    mso-line-height-rule: exactly;
                     color: #d6dceb;
                   ">
                   2. Deep Space Pharma. STELLARIA (morphanidine-C) tablets
@@ -789,7 +836,8 @@
                     margin: 0 0 8px 0;
                     font-family: Helvetica, Arial, sans-serif;
                     font-size: 11px;
-                    line-height: 17px; mso-line-height-rule: exactly;
+                    line-height: 17px;
+                    mso-line-height-rule: exactly;
                     color: #d6dceb;
                   ">
                   3. Fleet Medical Advisory 24-MC-07. Standards for
@@ -800,7 +848,7 @@
             </tr>
 
             <tr>
-              <td class="px" style="padding: 32px 40px 0px 40px">
+              <td class="warn-td px" style="padding: 32px 40px 0 40px">
                 <table
                   role="presentation"
                   width="100%"
@@ -827,7 +875,8 @@
                           margin: 0;
                           font-family: Helvetica, Arial, sans-serif;
                           font-size: 12px;
-                          line-height: 19px; mso-line-height-rule: exactly;
+                          line-height: 19px;
+                          mso-line-height-rule: exactly;
                           color: #eaeff8;
                         ">
                         Concurrent ion drive co-exposure within 6 hours of
@@ -846,7 +895,7 @@
             </tr>
 
             <tr>
-              <td class="px" style="padding: 24px 40px 32px 40px">
+              <td class="isi-td px" style="padding: 24px 40px 32px 40px">
                 <p
                   style="
                     margin: 0 0 16px 0;
@@ -862,11 +911,7 @@
                 <h4
                   style="
                     margin: 0 0 6px 0;
-                    font-family:
-                      'Helvetica Neue',
-                      Helvetica,
-                      Arial,
-                      sans-serif;
+                    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
                     font-size: 14px;
                     font-weight: 500;
                     letter-spacing: -0.005em;
@@ -880,7 +925,8 @@
                     padding-bottom: 14px;
                     font-family: Helvetica, Arial, sans-serif;
                     font-size: 12px;
-                    line-height: 19px; mso-line-height-rule: exactly;
+                    line-height: 19px;
+                    mso-line-height-rule: exactly;
                     color: #d6dceb;
                     border-bottom: 1px solid #233359;
                   ">
@@ -895,11 +941,7 @@
                 <h4
                   style="
                     margin: 0 0 6px 0;
-                    font-family:
-                      'Helvetica Neue',
-                      Helvetica,
-                      Arial,
-                      sans-serif;
+                    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
                     font-size: 14px;
                     font-weight: 500;
                     letter-spacing: -0.005em;
@@ -913,7 +955,8 @@
                     padding-bottom: 14px;
                     font-family: Helvetica, Arial, sans-serif;
                     font-size: 12px;
-                    line-height: 19px; mso-line-height-rule: exactly;
+                    line-height: 19px;
+                    mso-line-height-rule: exactly;
                     color: #d6dceb;
                     border-bottom: 1px solid #233359;
                   ">
@@ -928,11 +971,7 @@
                 <h4
                   style="
                     margin: 0 0 6px 0;
-                    font-family:
-                      'Helvetica Neue',
-                      Helvetica,
-                      Arial,
-                      sans-serif;
+                    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
                     font-size: 14px;
                     font-weight: 500;
                     letter-spacing: -0.005em;
@@ -946,7 +985,8 @@
                     padding-bottom: 14px;
                     font-family: Helvetica, Arial, sans-serif;
                     font-size: 12px;
-                    line-height: 19px; mso-line-height-rule: exactly;
+                    line-height: 19px;
+                    mso-line-height-rule: exactly;
                     color: #d6dceb;
                     border-bottom: 1px solid #233359;
                   ">
@@ -964,11 +1004,7 @@
                 <h4
                   style="
                     margin: 0 0 6px 0;
-                    font-family:
-                      'Helvetica Neue',
-                      Helvetica,
-                      Arial,
-                      sans-serif;
+                    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
                     font-size: 14px;
                     font-weight: 500;
                     letter-spacing: -0.005em;
@@ -982,7 +1018,8 @@
                     padding-bottom: 14px;
                     font-family: Helvetica, Arial, sans-serif;
                     font-size: 12px;
-                    line-height: 19px; mso-line-height-rule: exactly;
+                    line-height: 19px;
+                    mso-line-height-rule: exactly;
                     color: #d6dceb;
                     border-bottom: 1px solid #233359;
                   ">
@@ -998,11 +1035,7 @@
                 <h4
                   style="
                     margin: 0 0 6px 0;
-                    font-family:
-                      'Helvetica Neue',
-                      Helvetica,
-                      Arial,
-                      sans-serif;
+                    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
                     font-size: 14px;
                     font-weight: 500;
                     letter-spacing: -0.005em;
@@ -1016,7 +1049,8 @@
                     padding-bottom: 14px;
                     font-family: Helvetica, Arial, sans-serif;
                     font-size: 12px;
-                    line-height: 19px; mso-line-height-rule: exactly;
+                    line-height: 19px;
+                    mso-line-height-rule: exactly;
                     color: #d6dceb;
                     border-bottom: 1px solid #233359;
                   ">
@@ -1030,11 +1064,7 @@
                 <h4
                   style="
                     margin: 0 0 6px 0;
-                    font-family:
-                      'Helvetica Neue',
-                      Helvetica,
-                      Arial,
-                      sans-serif;
+                    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
                     font-size: 14px;
                     font-weight: 500;
                     letter-spacing: -0.005em;
@@ -1048,7 +1078,8 @@
                     padding-bottom: 14px;
                     font-family: Helvetica, Arial, sans-serif;
                     font-size: 12px;
-                    line-height: 19px; mso-line-height-rule: exactly;
+                    line-height: 19px;
+                    mso-line-height-rule: exactly;
                     color: #d6dceb;
                     border-bottom: 1px solid #233359;
                   ">
@@ -1065,11 +1096,7 @@
                 <p
                   style="
                     margin: 0 0 24px 0;
-                    font-family:
-                      'Helvetica Neue',
-                      Helvetica,
-                      Arial,
-                      sans-serif;
+                    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
                     font-size: 12px;
                     letter-spacing: -0.005em;
                     color: #6fe4f3;
@@ -1079,7 +1106,7 @@
                   <a
                     href="https://stellaria-hcp.dsp"
                     target="_blank"
-                    style="color: #6FE4F3; text-decoration: none"
+                    style="color: #6fe4f3; text-decoration: none"
                     >stellaria-hcp.dsp</a
                   >.
                 </p>
@@ -1088,7 +1115,7 @@
 
             <tr>
               <td
-                class="px"
+                class="footer-td"
                 bgcolor="#0b1426"
                 style="
                   padding: 28px 40px 32px;
@@ -1096,6 +1123,7 @@
                   border: 1px solid #233359;
                 ">
                 <img
+                  class="dsp-lockup"
                   src="dsp-lockup.png"
                   width="220"
                   alt="DEEP SPACE PHARMA"
@@ -1106,13 +1134,13 @@
                     margin-bottom: 18px;
                     border: 0;
                   " />
-
                 <p
                   style="
                     margin: 0 0 10px 0;
                     font-family: Helvetica, Arial, sans-serif;
                     font-size: 11px;
-                    line-height: 17px; mso-line-height-rule: exactly;
+                    line-height: 17px;
+                    mso-line-height-rule: exactly;
                     color: #d6dceb;
                   ">
                   Deep Space Pharma, Tower 4, Shackleton Medical Park, Luna
@@ -1123,7 +1151,8 @@
                     margin: 0 0 14px 0;
                     font-family: Helvetica, Arial, sans-serif;
                     font-size: 11px;
-                    line-height: 17px; mso-line-height-rule: exactly;
+                    line-height: 17px;
+                    mso-line-height-rule: exactly;
                     color: #98a3ba;
                   ">
                   You received this because you are a licensed healthcare
